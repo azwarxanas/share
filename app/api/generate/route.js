@@ -3,8 +3,8 @@ import { createCanvas, loadImage } from 'canvas'
 import * as cheerio from 'cheerio'
 import fetch from 'node-fetch'
 
-export async function POST(req) {
-  const { url } = await req.json()
+export async function POST(request) {
+  const { url } = await request.json()
   const html = await fetch(url).then(res => res.text())
   const $ = cheerio.load(html)
 
